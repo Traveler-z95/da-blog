@@ -1,0 +1,53 @@
+##七牛云的key
+qiniu:
+  accessKey: AvRx4q7i8eA1hFB7WYrhTDmyCrSFWVIS0G2cKcgi
+  secretKey: OfqbuM31Ti3uJPfKoQAWNqdBNqecMUkmcC0NmkS2
+  bucketName: blog
+  basePath: http://phuqadp5n.bkt.clouddn.com/
+
+## 百度推送
+baidu:
+  task:
+    postUrl: http://data.zz.baidu.com/urls?site=host810316620.s374.pppf.com.cn&token=QLKEEsmJTbKEerR7
+    baseUrl: http://localhost:8083
+
+#数据库连接配置
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/myblog
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+  thymeleaf:
+    mode: HTML5
+  #字符集和json格式工具
+  http:
+    encoding:
+      charset: utf-8
+    converters:
+      preferred-json-mapper: jackson
+    multipart:
+      max-file-size: 10MB
+  application:
+    name: da-blog
+
+#mynatis配置
+mybatis:
+  type-aliases-package: com.da.blog.vo
+  #mapper加载路径
+  mapper-locations: classpath:mapper/*Mapper.xml
+  #myatbis配置文件
+  config-location: classpath:mybatis-conf.xml
+#加载log4j2
+logging:
+  config: classpath:log4j2.xml
+  level: debug
+  file:
+server:
+  port: 8083
+  session-timeout: 3600
+
+
+
+
+
